@@ -34,7 +34,7 @@ The first prediction can therefore take several minutes. Later predictions in th
 
 `requirements.txt` contains only application dependencies. Training-only Matplotlib and scikit-learn are separated into `requirements-training.txt` to reduce cloud build time and memory.
 
-The application declares `opencv-python-headless` for server use. Ultralytics also installs `opencv-python` transitively, so `packages.txt` installs the Linux `libgl1` and `libglib2.0-0` runtime libraries required when that OpenCV wheel is imported on Streamlit Community Cloud.
+The application declares `opencv-python-headless` for server use. Ultralytics also installs `opencv-python` transitively, so `packages.txt` installs the Linux `libgl1` runtime library required when that OpenCV wheel is imported on Streamlit Community Cloud.
 
 ## Resource considerations
 
