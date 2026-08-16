@@ -1,0 +1,30 @@
+{
+  "image_size": 384,
+  "augmentation_profile": "camera",
+  "four_class": {
+    "architecture": "mobilenet_v3_small_finetune",
+    "batch_size": 16,
+    "max_epochs": 10,
+    "early_stopping_patience": 3
+  },
+  "vertical_direction": {
+    "classes": ["upright", "upside_down"],
+    "architecture": "mobilenet_v3_small_finetune",
+    "batch_size": 16,
+    "max_epochs": 12,
+    "early_stopping_patience": 4
+  },
+  "real_photo_policy": {
+    "target_unique_receipts": 50,
+    "target_scenes_per_orientation": 2,
+    "required_orientations_per_receipt": 4,
+    "group_key": "receipt_group",
+    "split_by_physical_receipt": true,
+    "target_split_ratio": {
+      "train": 0.7,
+      "val": 0.15,
+      "test": 0.15
+    },
+    "external_holdout_can_train": false
+  }
+}

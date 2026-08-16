@@ -1,0 +1,43 @@
+# Private and generated datasets
+data/
+large-receipt-image-dataset-SRD/
+Receipt or Invoice.v5i.folder/
+
+# Downloaded OCR and detector caches
+models/easyocr/*.pth
+models/detection/weights/
+
+# Experimental checkpoints; keep only the selected production checkpoint
+models/trained/*
+!models/trained/mobilenet_v3_small_finetune_full_best.pt
+
+# Large or private diagnostics
+reports/crop_overlays/
+reports/detection_prototype/
+reports/diagnostics/
+reports/hybrid_smoke*/
+reports/**/*.jpg
+reports/hybrid/*_ocr_predictions.csv
+reports/hybrid/*_resolved.csv
+docs/*.jpg
+!docs/assets/*.jpg
+
+# Python and test caches
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.coverage
+htmlcov/
+.venv/
+venv/
+
+# Local Streamlit secrets and editor files
+.streamlit/secrets.toml
+.env
+.idea/
+.vscode/
+
+# Office and OS temporary files
+~$*.docx
+.DS_Store
+Thumbs.db

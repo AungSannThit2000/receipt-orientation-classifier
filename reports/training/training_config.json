@@ -1,0 +1,51 @@
+{
+  "data_dir": "<project-root>\\data\\processed",
+  "manifest": "<project-root>\\data\\manifests\\generated_manifest.csv",
+  "source_analysis": "<project-root>\\data\\manifests\\source_analysis.csv",
+  "models_dir": "<project-root>\\models\\trained",
+  "reports_dir": "<project-root>\\reports\\training",
+  "batch_size": 32,
+  "seed": 4201,
+  "device": "cpu",
+  "class_names": [
+    "upright",
+    "tilted_right",
+    "upside_down",
+    "tilted_left"
+  ],
+  "experiments": [
+    {
+      "name": "simple_cnn_full",
+      "architecture": "simple_cnn",
+      "dataset_variant": "full",
+      "max_epochs": 18,
+      "patience": 5
+    },
+    {
+      "name": "simple_cnn_strict",
+      "architecture": "simple_cnn",
+      "dataset_variant": "strict",
+      "max_epochs": 18,
+      "patience": 5
+    },
+    {
+      "name": "mobilenet_v3_small_finetune_full",
+      "architecture": "mobilenet_v3_small_finetune",
+      "dataset_variant": "full",
+      "max_epochs": 10,
+      "patience": 3
+    },
+    {
+      "name": "mobilenet_v3_small_finetune_strict",
+      "architecture": "mobilenet_v3_small_finetune",
+      "dataset_variant": "strict",
+      "max_epochs": 10,
+      "patience": 3
+    }
+  ],
+  "evaluation_subset_counts": {
+    "test_full": 348,
+    "test_strict": 300,
+    "test_fallback": 48
+  }
+}

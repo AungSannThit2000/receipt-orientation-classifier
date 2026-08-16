@@ -1,0 +1,364 @@
+[
+  {
+    "experiment_name": "simple_cnn_full",
+    "architecture": "simple_cnn",
+    "dataset_variant": "full",
+    "max_epochs": 18,
+    "epochs_completed": 18,
+    "best_epoch": 18,
+    "best_val_accuracy": 0.7972222222222223,
+    "best_val_loss": 0.6436878853374057,
+    "primary_test_subset": "test_full",
+    "primary_test_accuracy": 0.8735632183908046,
+    "test_full_accuracy": 0.8735632183908046,
+    "test_full_macro_f1": 0.8730763939838592,
+    "test_strict_accuracy": 0.87,
+    "test_strict_macro_f1": 0.8695759913101829,
+    "test_fallback_accuracy": 0.8958333333333334,
+    "test_fallback_macro_f1": 0.8945498945498945,
+    "full_test_ms_per_image": 31.56509511492245,
+    "training_seconds": 2337.2922731,
+    "total_parameters": 316228,
+    "trainable_parameters": 316228,
+    "checkpoint_size_mb": 1.2202425003051758,
+    "checkpoint": "<project-root>\\models\\trained\\simple_cnn_full_best.pt",
+    "history_csv": "<project-root>\\reports\\training\\history_simple_cnn_full.csv",
+    "curves_png": "<project-root>\\reports\\training\\curves_simple_cnn_full.png",
+    "confusion_matrices": {
+      "test_full": "<project-root>\\reports\\training\\confusion_simple_cnn_full_test_full.png",
+      "test_strict": "<project-root>\\reports\\training\\confusion_simple_cnn_full_test_strict.png",
+      "test_fallback": "<project-root>\\reports\\training\\confusion_simple_cnn_full_test_fallback.png"
+    },
+    "dataset_counts": {
+      "train": 1668,
+      "val": 360,
+      "test_full": 348,
+      "test_strict": 300,
+      "test_fallback": 48
+    },
+    "evaluations": {
+      "test_full": {
+        "samples": 348,
+        "loss": 0.6239428965524695,
+        "accuracy": 0.8735632183908046,
+        "macro_precision": 0.8782229663684366,
+        "macro_recall": 0.8735632183908045,
+        "macro_f1": 0.8730763939838592,
+        "ms_per_image": 31.56509511492245,
+        "per_class_accuracy": {
+          "upright": 0.896551724137931,
+          "tilted_right": 0.9310344827586207,
+          "upside_down": 0.896551724137931,
+          "tilted_left": 0.7701149425287356
+        }
+      },
+      "test_strict": {
+        "samples": 300,
+        "loss": 0.6337444106737773,
+        "accuracy": 0.87,
+        "macro_precision": 0.873950513388332,
+        "macro_recall": 0.87,
+        "macro_f1": 0.8695759913101829,
+        "ms_per_image": 29.067705333291087,
+        "per_class_accuracy": {
+          "upright": 0.9066666666666666,
+          "tilted_right": 0.92,
+          "upside_down": 0.88,
+          "tilted_left": 0.7733333333333333
+        }
+      },
+      "test_fallback": {
+        "samples": 48,
+        "loss": 0.5626834630966187,
+        "accuracy": 0.8958333333333334,
+        "macro_precision": 0.9142857142857143,
+        "macro_recall": 0.8958333333333334,
+        "macro_f1": 0.8945498945498945,
+        "ms_per_image": 28.189308333215497,
+        "per_class_accuracy": {
+          "upright": 0.8333333333333334,
+          "tilted_right": 1.0,
+          "upside_down": 1.0,
+          "tilted_left": 0.75
+        }
+      }
+    },
+    "model_metadata": {
+      "architecture": "simple_cnn",
+      "pretrained": false,
+      "fine_tuned_feature_blocks": 0
+    }
+  },
+  {
+    "experiment_name": "simple_cnn_strict",
+    "architecture": "simple_cnn",
+    "dataset_variant": "strict",
+    "max_epochs": 18,
+    "epochs_completed": 18,
+    "best_epoch": 17,
+    "best_val_accuracy": 0.8366666666666667,
+    "best_val_loss": 0.6488250366846721,
+    "primary_test_subset": "test_strict",
+    "primary_test_accuracy": 0.89,
+    "test_full_accuracy": 0.8879310344827587,
+    "test_full_macro_f1": 0.8878174957354158,
+    "test_strict_accuracy": 0.89,
+    "test_strict_macro_f1": 0.8899678410956606,
+    "test_fallback_accuracy": 0.875,
+    "test_fallback_macro_f1": 0.873015873015873,
+    "full_test_ms_per_image": 19.472838793085064,
+    "training_seconds": 1835.1540625000052,
+    "total_parameters": 316228,
+    "trainable_parameters": 316228,
+    "checkpoint_size_mb": 1.220372200012207,
+    "checkpoint": "<project-root>\\models\\trained\\simple_cnn_strict_best.pt",
+    "history_csv": "<project-root>\\reports\\training\\history_simple_cnn_strict.csv",
+    "curves_png": "<project-root>\\reports\\training\\curves_simple_cnn_strict.png",
+    "confusion_matrices": {
+      "test_full": "<project-root>\\reports\\training\\confusion_simple_cnn_strict_test_full.png",
+      "test_strict": "<project-root>\\reports\\training\\confusion_simple_cnn_strict_test_strict.png",
+      "test_fallback": "<project-root>\\reports\\training\\confusion_simple_cnn_strict_test_fallback.png"
+    },
+    "dataset_counts": {
+      "train": 1536,
+      "val": 300,
+      "test_full": 348,
+      "test_strict": 300,
+      "test_fallback": 48
+    },
+    "evaluations": {
+      "test_full": {
+        "samples": 348,
+        "loss": 0.6287884945156931,
+        "accuracy": 0.8879310344827587,
+        "macro_precision": 0.8894986661024472,
+        "macro_recall": 0.8879310344827587,
+        "macro_f1": 0.8878174957354158,
+        "ms_per_image": 19.472838793085064,
+        "per_class_accuracy": {
+          "upright": 0.8620689655172413,
+          "tilted_right": 0.9195402298850575,
+          "upside_down": 0.9195402298850575,
+          "tilted_left": 0.8505747126436781
+        }
+      },
+      "test_strict": {
+        "samples": 300,
+        "loss": 0.6337312157948812,
+        "accuracy": 0.89,
+        "macro_precision": 0.8904497804326571,
+        "macro_recall": 0.89,
+        "macro_f1": 0.8899678410956606,
+        "ms_per_image": 19.198747666669078,
+        "per_class_accuracy": {
+          "upright": 0.88,
+          "tilted_right": 0.9066666666666666,
+          "upside_down": 0.9066666666666666,
+          "tilted_left": 0.8666666666666667
+        }
+      },
+      "test_fallback": {
+        "samples": 48,
+        "loss": 0.5978964964548746,
+        "accuracy": 0.875,
+        "macro_precision": 0.9,
+        "macro_recall": 0.875,
+        "macro_f1": 0.873015873015873,
+        "ms_per_image": 18.128258333187357,
+        "per_class_accuracy": {
+          "upright": 0.75,
+          "tilted_right": 1.0,
+          "upside_down": 1.0,
+          "tilted_left": 0.75
+        }
+      }
+    },
+    "model_metadata": {
+      "architecture": "simple_cnn",
+      "pretrained": false,
+      "fine_tuned_feature_blocks": 0
+    }
+  },
+  {
+    "experiment_name": "mobilenet_v3_small_finetune_full",
+    "architecture": "mobilenet_v3_small_finetune",
+    "dataset_variant": "full",
+    "max_epochs": 10,
+    "epochs_completed": 10,
+    "best_epoch": 7,
+    "best_val_accuracy": 0.9333333333333333,
+    "best_val_loss": 0.3952733318010966,
+    "primary_test_subset": "test_full",
+    "primary_test_accuracy": 0.9224137931034483,
+    "test_full_accuracy": 0.9224137931034483,
+    "test_full_macro_f1": 0.9225908701997692,
+    "test_strict_accuracy": 0.93,
+    "test_strict_macro_f1": 0.9302845200432712,
+    "test_fallback_accuracy": 0.875,
+    "test_fallback_macro_f1": 0.8739847109412326,
+    "full_test_ms_per_image": 5.804625862086025,
+    "training_seconds": 227.31283019999682,
+    "total_parameters": 1521956,
+    "trainable_parameters": 1239588,
+    "checkpoint_size_mb": 5.938204765319824,
+    "checkpoint": "<project-root>\\models\\trained\\mobilenet_v3_small_finetune_full_best.pt",
+    "history_csv": "<project-root>\\reports\\training\\history_mobilenet_v3_small_finetune_full.csv",
+    "curves_png": "<project-root>\\reports\\training\\curves_mobilenet_v3_small_finetune_full.png",
+    "confusion_matrices": {
+      "test_full": "<project-root>\\reports\\training\\confusion_mobilenet_v3_small_finetune_full_test_full.png",
+      "test_strict": "<project-root>\\reports\\training\\confusion_mobilenet_v3_small_finetune_full_test_strict.png",
+      "test_fallback": "<project-root>\\reports\\training\\confusion_mobilenet_v3_small_finetune_full_test_fallback.png"
+    },
+    "dataset_counts": {
+      "train": 1668,
+      "val": 360,
+      "test_full": 348,
+      "test_strict": 300,
+      "test_fallback": 48
+    },
+    "evaluations": {
+      "test_full": {
+        "samples": 348,
+        "loss": 0.408538818359375,
+        "accuracy": 0.9224137931034483,
+        "macro_precision": 0.9236723341895188,
+        "macro_recall": 0.9224137931034483,
+        "macro_f1": 0.9225908701997692,
+        "ms_per_image": 5.804625862086025,
+        "per_class_accuracy": {
+          "upright": 0.9195402298850575,
+          "tilted_right": 0.9425287356321839,
+          "upside_down": 0.8735632183908046,
+          "tilted_left": 0.9540229885057471
+        }
+      },
+      "test_strict": {
+        "samples": 300,
+        "loss": 0.39932822863260903,
+        "accuracy": 0.93,
+        "macro_precision": 0.9311763682152031,
+        "macro_recall": 0.93,
+        "macro_f1": 0.9302845200432712,
+        "ms_per_image": 5.874172333327199,
+        "per_class_accuracy": {
+          "upright": 0.92,
+          "tilted_right": 0.96,
+          "upside_down": 0.8933333333333333,
+          "tilted_left": 0.9466666666666667
+        }
+      },
+      "test_fallback": {
+        "samples": 48,
+        "loss": 0.46610499421755475,
+        "accuracy": 0.875,
+        "macro_precision": 0.887987012987013,
+        "macro_recall": 0.875,
+        "macro_f1": 0.8739847109412326,
+        "ms_per_image": 6.237133333343081,
+        "per_class_accuracy": {
+          "upright": 0.9166666666666666,
+          "tilted_right": 0.8333333333333334,
+          "upside_down": 0.75,
+          "tilted_left": 1.0
+        }
+      }
+    },
+    "model_metadata": {
+      "architecture": "mobilenet_v3_small_finetune",
+      "pretrained": true,
+      "weights": "MobileNet_V3_Small_Weights.IMAGENET1K_V1",
+      "fine_tuned_feature_blocks": 3
+    }
+  },
+  {
+    "experiment_name": "mobilenet_v3_small_finetune_strict",
+    "architecture": "mobilenet_v3_small_finetune",
+    "dataset_variant": "strict",
+    "max_epochs": 10,
+    "epochs_completed": 6,
+    "best_epoch": 3,
+    "best_val_accuracy": 0.9233333333333333,
+    "best_val_loss": 0.4469566281636556,
+    "primary_test_subset": "test_strict",
+    "primary_test_accuracy": 0.8833333333333333,
+    "test_full_accuracy": 0.8879310344827587,
+    "test_full_macro_f1": 0.8884942575222077,
+    "test_strict_accuracy": 0.8833333333333333,
+    "test_strict_macro_f1": 0.8838758518644025,
+    "test_fallback_accuracy": 0.9166666666666666,
+    "test_fallback_macro_f1": 0.9158241758241759,
+    "full_test_ms_per_image": 6.027568965535089,
+    "training_seconds": 120.98967740000808,
+    "total_parameters": 1521956,
+    "trainable_parameters": 1239588,
+    "checkpoint_size_mb": 5.941855430603027,
+    "checkpoint": "<project-root>\\models\\trained\\mobilenet_v3_small_finetune_strict_best.pt",
+    "history_csv": "<project-root>\\reports\\training\\history_mobilenet_v3_small_finetune_strict.csv",
+    "curves_png": "<project-root>\\reports\\training\\curves_mobilenet_v3_small_finetune_strict.png",
+    "confusion_matrices": {
+      "test_full": "<project-root>\\reports\\training\\confusion_mobilenet_v3_small_finetune_strict_test_full.png",
+      "test_strict": "<project-root>\\reports\\training\\confusion_mobilenet_v3_small_finetune_strict_test_strict.png",
+      "test_fallback": "<project-root>\\reports\\training\\confusion_mobilenet_v3_small_finetune_strict_test_fallback.png"
+    },
+    "dataset_counts": {
+      "train": 1536,
+      "val": 300,
+      "test_full": 348,
+      "test_strict": 300,
+      "test_fallback": 48
+    },
+    "evaluations": {
+      "test_full": {
+        "samples": 348,
+        "loss": 0.5218543732303312,
+        "accuracy": 0.8879310344827587,
+        "macro_precision": 0.9009925789696235,
+        "macro_recall": 0.8879310344827587,
+        "macro_f1": 0.8884942575222077,
+        "ms_per_image": 6.027568965535089,
+        "per_class_accuracy": {
+          "upright": 0.9770114942528736,
+          "tilted_right": 0.896551724137931,
+          "upside_down": 0.7701149425287356,
+          "tilted_left": 0.9080459770114943
+        }
+      },
+      "test_strict": {
+        "samples": 300,
+        "loss": 0.5298870309193929,
+        "accuracy": 0.8833333333333333,
+        "macro_precision": 0.896878948469704,
+        "macro_recall": 0.8833333333333333,
+        "macro_f1": 0.8838758518644025,
+        "ms_per_image": 5.738470999979957,
+        "per_class_accuracy": {
+          "upright": 0.9866666666666667,
+          "tilted_right": 0.88,
+          "upside_down": 0.7733333333333333,
+          "tilted_left": 0.8933333333333333
+        }
+      },
+      "test_fallback": {
+        "samples": 48,
+        "loss": 0.47165026267369586,
+        "accuracy": 0.9166666666666666,
+        "macro_precision": 0.9271978021978022,
+        "macro_recall": 0.9166666666666666,
+        "macro_f1": 0.9158241758241759,
+        "ms_per_image": 5.733120833610883,
+        "per_class_accuracy": {
+          "upright": 0.9166666666666666,
+          "tilted_right": 1.0,
+          "upside_down": 0.75,
+          "tilted_left": 1.0
+        }
+      }
+    },
+    "model_metadata": {
+      "architecture": "mobilenet_v3_small_finetune",
+      "pretrained": true,
+      "weights": "MobileNet_V3_Small_Weights.IMAGENET1K_V1",
+      "fine_tuned_feature_blocks": 3
+    }
+  }
+]

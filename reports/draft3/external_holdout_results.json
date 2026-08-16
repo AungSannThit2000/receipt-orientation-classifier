@@ -1,0 +1,48 @@
+{
+  "samples": 2,
+  "unique_receipt_groups": 1,
+  "coverage": 1.0,
+  "model_accuracy": 0.0,
+  "resolved_accuracy": 1.0,
+  "warning": "Both samples show one physical receipt; this is a regression check, not an accuracy estimate.",
+  "results": [
+    {
+      "image": "external_thai_view_1.jpg",
+      "receipt_group": "cp_extra_receipt_001",
+      "label": "upside_down",
+      "split": "external_holdout",
+      "notes": "same physical Thai receipt",
+      "model_label": "upright",
+      "model_confidence": 0.9675536751747131,
+      "ocr_label": "upside_down",
+      "ocr_score": 5.450825455069208,
+      "ocr_margin": 0.8238402267783516,
+      "final_label": "upside_down",
+      "decision_source": "ocr_override",
+      "correct": true,
+      "abstained": false,
+      "crop_method": "yolo_world+neutral_bright",
+      "detector_confidence": 0.26306408643722534,
+      "ocr_seconds": 27.79077920000418
+    },
+    {
+      "image": "external_thai_view_2.jpg",
+      "receipt_group": "cp_extra_receipt_001",
+      "label": "upside_down",
+      "split": "external_holdout",
+      "notes": "same physical Thai receipt",
+      "model_label": "upright",
+      "model_confidence": 0.8224728107452393,
+      "ocr_label": "upside_down",
+      "ocr_score": 38.95505747873773,
+      "ocr_margin": 0.9639023955887274,
+      "final_label": "upside_down",
+      "decision_source": "ocr_override",
+      "correct": true,
+      "abstained": false,
+      "crop_method": "yolo_world+neutral_bright",
+      "detector_confidence": 0.09394720941781998,
+      "ocr_seconds": 24.458090700005414
+    }
+  ]
+}

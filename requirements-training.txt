@@ -1,0 +1,4 @@
+-r requirements.txt
+matplotlib==3.10.9
+scikit-learn==1.7.2
+python-docx==1.2.0

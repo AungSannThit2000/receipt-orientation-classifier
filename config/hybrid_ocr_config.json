@@ -1,0 +1,17 @@
+{
+  "minimum_score": 5.0,
+  "minimum_margin": 0.35,
+  "ocr_image_size": 640,
+  "languages": ["th", "en"],
+  "uncertain_on_inconclusive": true,
+  "fast_pairwise": true,
+  "max_text_regions": 24,
+  "recognition_batch_size": 32,
+  "confirmation_minimum_score": 4.0,
+  "confirmation_minimum_margin": 0.5,
+  "confirmation_model_confidence": 0.55,
+  "confirmation_model_margin": 0.15,
+  "tuned_on_split": "draft3_runtime_benchmark",
+  "validation_samples": 2,
+  "calibration_status": "provisional"
+}
