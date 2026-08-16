@@ -42,6 +42,10 @@ class HybridOCRConfig:
     confirmation_minimum_margin: float = 0.50
     confirmation_model_confidence: float = 0.55
     confirmation_model_margin: float = 0.15
+    strong_consensus_minimum_score: float = 2.0
+    strong_consensus_minimum_margin: float = 0.50
+    strong_consensus_model_confidence: float = 0.95
+    strong_consensus_model_margin: float = 0.80
 
     @classmethod
     def from_path(cls, path: Path = DEFAULT_HYBRID_CONFIG) -> "HybridOCRConfig":
@@ -68,6 +72,18 @@ class HybridOCRConfig:
             ),
             confirmation_model_margin=float(
                 payload.get("confirmation_model_margin", 0.15)
+            ),
+            strong_consensus_minimum_score=float(
+                payload.get("strong_consensus_minimum_score", 2.0)
+            ),
+            strong_consensus_minimum_margin=float(
+                payload.get("strong_consensus_minimum_margin", 0.50)
+            ),
+            strong_consensus_model_confidence=float(
+                payload.get("strong_consensus_model_confidence", 0.95)
+            ),
+            strong_consensus_model_margin=float(
+                payload.get("strong_consensus_model_margin", 0.80)
             ),
         )
 
@@ -123,10 +139,22 @@ def resolve_decision(
         and model_confidence >= config.confirmation_model_confidence
         and model_margin >= config.confirmation_model_margin
     )
-    reliable = strict_reliable or consensus_reliable
+    strong_consensus_reliable = (
+        not strict_reliable
+        and not consensus_reliable
+        and ocr_label == model_label
+        and decision.best_score >= config.strong_consensus_minimum_score
+        and decision.confidence_margin >= config.strong_consensus_minimum_margin
+        and model_confidence >= config.strong_consensus_model_confidence
+        and model_margin >= config.strong_consensus_model_margin
+    )
+    reliable = strict_reliable or consensus_reliable or strong_consensus_reliable
     if consensus_reliable:
         final_label = model_label
         source = "ocr_consensus"
+    elif strong_consensus_reliable:
+        final_label = model_label
+        source = "high_confidence_consensus"
     elif not reliable:
         final_label = None if config.uncertain_on_inconclusive else model_label
         source = (

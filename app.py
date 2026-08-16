@@ -52,6 +52,7 @@ DECISION_SOURCE_NAMES = {
     "ocr_override": "OCR override",
     "ocr_confirmed": "OCR confirmed",
     "ocr_consensus": "Model + OCR",
+    "high_confidence_consensus": "Strong model + OCR",
     "uncertain_ocr_inconclusive": "Uncertain",
     "model_ocr_inconclusive": "Model fallback",
     "model_only": "Model only",
@@ -415,6 +416,10 @@ elif decision_source == "ocr_consensus":
     result_detail = (
         f"Model and OCR agree &middot; {ocr_result.margin * 100:.1f}% OCR margin"
     )
+elif decision_source == "high_confidence_consensus":
+    result_detail = (
+        f"Strong model and OCR agreement &middot; {ocr_result.margin * 100:.1f}% OCR margin"
+    )
 elif decision_source == "model_ocr_inconclusive":
     result_detail = (
         f"OCR was inconclusive &middot; using {confidence_percent:.1f}% model confidence"
@@ -560,6 +565,11 @@ with evidence_tab:
         elif decision_source == "ocr_consensus":
             st.success(
                 "Model and OCR agreed with sufficient combined evidence.",
+                icon=":material/check_circle:",
+            )
+        elif decision_source == "high_confidence_consensus":
+            st.success(
+                "The highly confident model and OCR direction agreed despite a low absolute OCR score.",
                 icon=":material/check_circle:",
             )
         elif decision_source == "uncertain_ocr_inconclusive":

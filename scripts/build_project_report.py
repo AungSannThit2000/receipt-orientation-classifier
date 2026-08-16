@@ -628,6 +628,7 @@ def add_ocr(doc: Document, bullet_id: int) -> None:
         "                + 7.5 * receipt_keyword_hits\n\n"
         "ocr_margin = (best_score - second_score) / max(best_score, 1)"
     )
+    doc.add_page_break()
     doc.add_heading("Runtime decision rules", level=2)
     add_table(
         doc,
@@ -635,13 +636,14 @@ def add_ocr(doc: Document, bullet_id: int) -> None:
         [
             ["Strict OCR", "Score >= 5.0 and margin >= 0.35", "Confirm or override model"],
             ["Model + OCR consensus", "Same label; OCR score >= 4.0; OCR margin >= 0.50; model confidence >= 0.55; model margin >= 0.15", "Accept shared label"],
+            ["High-confidence consensus", "Same label; OCR score >= 2.0; OCR margin >= 0.50; model confidence >= 0.95; model margin >= 0.80", "Accept shared label"],
             ["Inconclusive", "Neither rule passes", "Return Uncertain"],
         ],
         [1920, 4800, 2640],
     )
     for text in (
         "A weak OCR result cannot override a disagreeing model.",
-        "A slightly weaker OCR result may confirm the model only when both sources have adequate evidence.",
+        "A low absolute OCR score may confirm an exceptionally strong matching model result only when the OCR pair remains well separated.",
         "Uncertain is a deliberate abstention state, not a fifth orientation class.",
         "The current thresholds are provisional until a larger grouped real-photo validation set is available.",
     ):
@@ -796,7 +798,7 @@ def add_testing_and_deployment(doc: Document, bullet_id: int) -> None:
         ],
         [3600, 5760],
     )
-    add_callout(doc, "Verified result", "All 18 unit tests pass, Python compilation passes, and the local app completed the public upside-down demo with the correct OCR override.", GREEN)
+    add_callout(doc, "Verified result", "All 20 unit tests pass, Python compilation passes, and the local app completed both the public upside-down OCR override and a high-confidence tilted-left consensus regression.", GREEN)
     doc.add_heading("GitHub publication boundary", level=2)
     add_table(
         doc,

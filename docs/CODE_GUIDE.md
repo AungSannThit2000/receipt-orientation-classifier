@@ -98,7 +98,7 @@ Builds `docs/Receipt_Orientation_Classifier_Project_Report.docx` from the aggreg
 
 ### `config/hybrid_ocr_config.json`
 
-Runtime OCR language, image size, region limit, batch size, strict override thresholds, consensus thresholds, and abstention policy.
+Runtime OCR language, image size, region limit, batch size, strict override thresholds, standard and high-confidence consensus thresholds, and abstention policy.
 
 ### `config/draft3_training.json`
 
@@ -120,7 +120,7 @@ Checks checkpoint metadata, complete probability output, correction artifacts, a
 
 ### `tests/test_hybrid_orientation.py`
 
-Checks candidate pairs, opposite-direction overrides, confirmations, consensus, abstention, and fallback behavior without loading OCR models.
+Checks candidate pairs, opposite-direction overrides, confirmations, standard and high-confidence consensus, abstention, and fallback behavior without loading OCR models.
 
 ### `tests/test_ocr_orientation.py`
 

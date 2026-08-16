@@ -61,6 +61,7 @@ Generated-domain metrics should not be interpreted as unrestricted camera-photo 
 - Object detection removes background clutter before classification.
 - OCR provides independent text-direction evidence.
 - Strict override thresholds prevent weak OCR from changing a model result.
+- A high-confidence agreement rule accepts matching model/OCR directions only when model confidence, model margin, and OCR relative margin all pass strict gates.
 - Explicit abstention prevents automatic rotation when evidence is inadequate.
 - Uploaded data is not intentionally persisted by application code.
 - The UI exposes crop and decision evidence for human inspection.

@@ -128,6 +128,31 @@ class HybridOrientationTests(unittest.TestCase):
         self.assertIsNone(result.final_label)
         self.assertEqual(result.decision_source, "uncertain_ocr_inconclusive")
 
+    def test_high_confidence_consensus_accepts_low_absolute_ocr_score(self) -> None:
+        config = HybridOCRConfig(minimum_score=5.0, minimum_margin=0.35)
+        result = resolve_decision(
+            "tilted_left",
+            ocr_decision(best_rotation=270, best_score=2.9, second_score=1.3),
+            config,
+            model_confidence=0.997,
+            model_margin=0.995,
+        )
+        self.assertEqual(result.final_label, "tilted_left")
+        self.assertEqual(result.decision_source, "high_confidence_consensus")
+        self.assertTrue(result.reliable)
+
+    def test_high_confidence_consensus_still_requires_ocr_separation(self) -> None:
+        config = HybridOCRConfig(minimum_score=5.0, minimum_margin=0.35)
+        result = resolve_decision(
+            "tilted_left",
+            ocr_decision(best_rotation=270, best_score=2.9, second_score=2.0),
+            config,
+            model_confidence=0.997,
+            model_margin=0.995,
+        )
+        self.assertIsNone(result.final_label)
+        self.assertEqual(result.decision_source, "uncertain_ocr_inconclusive")
+
 
 if __name__ == "__main__":
     unittest.main()

@@ -125,9 +125,10 @@ The current runtime configuration is provisional:
 
 - strict override: OCR score at least 5.0 and margin at least 0.35;
 - same-label consensus: OCR score at least 4.0, OCR margin at least 0.50, model confidence at least 0.55, and model margin at least 0.15;
+- high-confidence same-label consensus: OCR score at least 2.0, OCR margin at least 0.50, model confidence at least 0.95, and model margin at least 0.80;
 - otherwise: return `Uncertain` and do not auto-rotate.
 
-A weak OCR result cannot override a disagreeing model. A slightly weaker result may confirm the model only when both sources independently have adequate evidence.
+A weak OCR result cannot override a disagreeing model. The high-confidence path only confirms a shared label and still requires meaningful OCR separation between the two opposite directions.
 
 ## 9. Correction output
 

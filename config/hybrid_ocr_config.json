@@ -11,6 +11,10 @@
   "confirmation_minimum_margin": 0.5,
   "confirmation_model_confidence": 0.55,
   "confirmation_model_margin": 0.15,
+  "strong_consensus_minimum_score": 2.0,
+  "strong_consensus_minimum_margin": 0.5,
+  "strong_consensus_model_confidence": 0.95,
+  "strong_consensus_model_margin": 0.8,
   "tuned_on_split": "draft3_runtime_benchmark",
   "validation_samples": 2,
   "calibration_status": "provisional"

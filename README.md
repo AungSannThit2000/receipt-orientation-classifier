@@ -35,6 +35,8 @@ flowchart LR
 
 The classifier chooses the likely axis first: vertical (`upright`/`upside_down`) or horizontal (`tilted_right`/`tilted_left`). OCR then compares only the two opposite directions on that axis. This addresses the visual symmetry that caused the base model to confuse upright with upside down and left with right.
 
+When the model is at least 95% confident with an 80-point probability margin, a matching OCR direction may confirm the label with an OCR score of at least 2.0 and a relative margin of at least 0.50. This targeted guardrail prevents a low absolute OCR score from forcing `Uncertain` when both systems strongly agree; weak OCR still cannot override a disagreeing model.
+
 ## Results
 
 | Evaluation | Model only | OCR only within model pair | Hybrid |
