@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import importlib.util
 import sys
 import unittest
 from pathlib import Path
@@ -28,6 +29,20 @@ class ReceiptObjectDetectionTests(unittest.TestCase):
         self.detector = object.__new__(YOLOWorldReceiptDetector)
         self.detector.padding_ratio = 0.02
         self.detector.model = SimpleNamespace(names={0: "receipt", 1: "document"})
+
+    def test_module_loads_without_sys_modules_registration(self) -> None:
+        module_path = SRC_DIR / "realtime_receipt_detection.py"
+        spec = importlib.util.spec_from_file_location(
+            "streamlit_hot_reload_detector",
+            module_path,
+        )
+        self.assertIsNotNone(spec)
+        self.assertIsNotNone(spec.loader)
+        module = importlib.util.module_from_spec(spec)
+
+        spec.loader.exec_module(module)
+
+        self.assertTrue(hasattr(module, "ReceiptDetectionResult"))
 
     def test_select_detection_prefers_confident_central_receipt(self) -> None:
         boxes = FakeBoxes(

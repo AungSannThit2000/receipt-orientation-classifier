@@ -46,7 +46,7 @@ Assign one `receipt_group` per physical receipt and split by that group, approxi
 
 ## Verification completed
 
-- 20 unit tests pass.
+- 21 unit tests pass.
 - Four-class 384 px camera-augmentation smoke test passes.
 - Two-class vertical-direction 384 px smoke test passes.
 - All sampled rebuilt images are 384 x 384.

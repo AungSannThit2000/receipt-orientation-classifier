@@ -798,7 +798,7 @@ def add_testing_and_deployment(doc: Document, bullet_id: int) -> None:
         ],
         [3600, 5760],
     )
-    add_callout(doc, "Verified result", "All 20 unit tests pass, Python compilation passes, and the local app completed both the public upside-down OCR override and a high-confidence tilted-left consensus regression.", GREEN)
+    add_callout(doc, "Verified result", "All 21 unit tests pass, Python compilation passes, and the local app completed both the public upside-down OCR override and a high-confidence tilted-left consensus regression.", GREEN)
     doc.add_heading("GitHub publication boundary", level=2)
     add_table(
         doc,
