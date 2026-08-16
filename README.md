@@ -121,7 +121,9 @@ Training generated 2,376 balanced samples from 198 unique source receipts. The s
 
 ## Cloud deployment
 
-The repository root contains `app.py`, `requirements.txt`, and `.streamlit/config.toml`, which is the layout expected by Streamlit Community Cloud. Select Python 3.10 in the deployment's advanced settings. No secrets are required.
+**Live app:** [receipt-orientation-cv-aung.streamlit.app](https://receipt-orientation-cv-aung.streamlit.app/)
+
+The repository root contains `app.py`, `requirements.txt`, `packages.txt`, and `.streamlit/config.toml`, which is the layout used by Streamlit Community Cloud. Select Python 3.10 in the deployment's advanced settings. No secrets are required.
 
 See [Deployment guide](docs/DEPLOYMENT.md) for build behavior, model caching, and troubleshooting.
 

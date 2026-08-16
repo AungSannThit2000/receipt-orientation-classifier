@@ -7,6 +7,7 @@ The deployable files are at repository root:
 ```text
 app.py
 requirements.txt
+packages.txt
 .streamlit/config.toml
 models/detection/receipt_yolov8s_worldv2.pt
 models/trained/mobilenet_v3_small_finetune_full_best.pt
@@ -33,7 +34,7 @@ The first prediction can therefore take several minutes. Later predictions in th
 
 `requirements.txt` contains only application dependencies. Training-only Matplotlib and scikit-learn are separated into `requirements-training.txt` to reduce cloud build time and memory.
 
-The application uses `opencv-python-headless`, which is appropriate for a Linux server without a desktop display. No `packages.txt` system dependencies are required by the current path.
+The application declares `opencv-python-headless` for server use. Ultralytics also installs `opencv-python` transitively, so `packages.txt` installs the Linux `libgl1` and `libglib2.0-0` runtime libraries required when that OpenCV wheel is imported on Streamlit Community Cloud.
 
 ## Resource considerations
 
